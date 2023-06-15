@@ -1,4 +1,9 @@
+'use client'
+import StyledComponentsRegistry from '@/styles'
+import { defaultTheme } from '@/styles/defaultTheme'
 import {Roboto} from 'next/font/google'
+import {ThemeProvider} from 'styled-components'
+import { GlobalStyle } from './globalStyles'
 const roboto = Roboto({ subsets: ['latin'],weight:['400','700'] })
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}> 
+      <StyledComponentsRegistry>
+      <ThemeProvider theme={defaultTheme}>
+        {children}
+        <GlobalStyle/>
+        </ThemeProvider>
+      </StyledComponentsRegistry>
+      </body>
     </html>
   )
 }

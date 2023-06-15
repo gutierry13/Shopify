@@ -1,5 +1,12 @@
+'use client'
+import styled from "styled-components"
+
+
+const Button = styled.button`
+  background-color: ${props=>props.theme['aqua']};
+`
 export default function Home() {
   return (
-    <h1>Hello world</h1>
+    <Button>Hello world</Button>
   )
 }
