@@ -1,11 +1,8 @@
-import { HeaderContainer, HeaderContent } from "./styles";
-
+import { HeaderContent } from "./styles"
 export default function Header() {
   return (
-    <HeaderContainer>
       <HeaderContent>
-        Header
+        HeaderContent
       </HeaderContent>
-    </HeaderContainer>
   )
 }

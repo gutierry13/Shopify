@@ -5,6 +5,7 @@ import {Roboto} from 'next/font/google'
 import {ThemeProvider} from 'styled-components'
 import { GlobalStyle } from './globalStyles'
 import Header from '@/components/header'
+import { Container } from '@/styles/container'
 const roboto = Roboto({ subsets: ['latin'],weight:['400','700'] })
 export const metadata = {
   title: 'Shopify',
@@ -21,8 +22,10 @@ export default function RootLayout({
       <body className={roboto.className}> 
       <StyledComponentsRegistry>
       <ThemeProvider theme={defaultTheme}>
+        <Container>
         <Header/>
         {children}
+        </Container>
         <GlobalStyle/>
         </ThemeProvider>
       </StyledComponentsRegistry>
