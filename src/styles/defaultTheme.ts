@@ -8,4 +8,8 @@ export const defaultTheme = {
 
   'green-500': '#00875f',
   'green-300': '#00b37e',
+  'text-sm': '1.125rem',
+  'text-lg':'1.25rem',
+  'text-xl':'1.5rem',
+  'text-xxl':'2rem',
 }
