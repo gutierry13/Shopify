@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from 'styled-components'
 
 export const HeaderContent = styled.header`
   max-width: 1180px;

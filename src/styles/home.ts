@@ -1,16 +1,15 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const HomeContainer = styled.main`
-display: flex;
-/* gap: 3rem; */
-width: 100%;
-margin-left: auto;
-max-width: calc(100vw - ((100vw - 1180px) /2));
-min-height: 656px;
-
+  display: flex;
+  /* gap: 3rem; */
+  width: 100%;
+  margin-left: auto;
+  max-width: calc(100vw - ((100vw - 1180px) / 2));
+  min-height: 656px;
 `
 export const Products = styled.a`
-  background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%); 
+  background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%);
   border-radius: 8px;
   /* padding: 0.25rem; */
   cursor: pointer;
@@ -19,10 +18,10 @@ export const Products = styled.a`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  img{
+  img {
     object-fit: cover;
   }
-  footer{
+  footer {
     position: absolute;
     bottom: 0.25rem;
     left: 0.25rem;
@@ -31,27 +30,25 @@ export const Products = styled.a`
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     transform: translateY(110%);
     opacity: 0;
     transition: all 0.2s ease-in-out;
-    strong{
-      color: ${props=>props.theme['gray-100']};
-      font-size: ${props=>props.theme['text-lg']};
+    strong {
+      color: ${(props) => props.theme['gray-100']};
+      font-size: ${(props) => props.theme['text-lg']};
     }
-    span{
-      color: ${props=>props.theme['gray-300']};
-      font-size: ${props=>props.theme['text-xl']};
+    span {
+      color: ${(props) => props.theme['gray-300']};
+      font-size: ${(props) => props.theme['text-xl']};
       font-weight: bold;
     }
-
   }
-  &:hover{
-      footer{
-        transform: translateY(0%);
-        opacity: 1;
-      }
+  &:hover {
+    footer {
+      transform: translateY(0%);
+      opacity: 1;
     }
-
+  }
 `
