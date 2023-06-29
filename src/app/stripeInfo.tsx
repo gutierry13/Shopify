@@ -11,7 +11,12 @@ export default async function StripeInfo() {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: price.unit_amount ? price.unit_amount / 100 : '',
+      price: price.unit_amount
+        ? new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          }).format(price.unit_amount / 100)
+        : '',
     }
   })
   return products
