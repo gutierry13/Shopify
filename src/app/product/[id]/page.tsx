@@ -1,30 +1,27 @@
-'use client'
-import {
-  ImageContainer,
-  ProductContainer,
-  ProductDetails,
-} from '@/styles/product'
+import { StripePrefetch } from '@/app/stripeInfo'
+import ProductPage from '@/components/product/product'
+// import {
+//   ImageContainer,
+//   ProductContainer,
+//   ProductDetails,
+// } from '@/styles/product'
 
 interface ProductProps {
   params: {
     id: string
   }
 }
-export default function Product({ params }: ProductProps) {
+export default async function Product({ params }: ProductProps) {
+  const { props } = await StripePrefetch(params.id)
+  const { product } = props
+  // console.log(product)
+
   return (
-    <ProductContainer>
-      <ImageContainer></ImageContainer>
-      <ProductDetails>
-        <h1>Camiseta X</h1>
-        <span>R$ 79,90</span>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          consequuntur, odit modi nesciunt distinctio, dolor temporibus dolorem
-          sint odio minima illo atque! A tenetur qui doloribus neque hic veniam
-          ducimus!
-        </p>
-        <button>Comprar</button>
-      </ProductDetails>
-    </ProductContainer>
+    <ProductPage image={product.imageUrl}>
+      <h1>{product.name}</h1>
+      <span>{product.price}</span>
+      <p>{product.description}</p>
+      <button>Comprar</button>
+    </ProductPage>
   )
 }
