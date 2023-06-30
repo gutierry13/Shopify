@@ -1,7 +1,7 @@
 import 'keen-slider/keen-slider.min.css'
 import Image from 'next/image'
 import { SlideElement, Slider } from '@/components/slider/slider'
-import StripeInfo from './stripeInfo'
+import { StripeInfo } from './stripeInfo'
 import Link from 'next/link'
 export const revalidate: number = 60
 export default async function Home() {

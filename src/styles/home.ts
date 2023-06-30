@@ -8,7 +8,7 @@ export const HomeContainer = styled.main`
   max-width: calc(100vw - ((100vw - 1180px) / 2));
   min-height: 656px;
 `
-export const Products = styled.a`
+export const Products = styled.div`
   background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%);
   border-radius: 8px;
   /* padding: 0.25rem; */

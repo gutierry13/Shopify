@@ -13,7 +13,6 @@ export const ImageContainer = styled.div`
   width: 100%;
   max-width: 576px;
   height: calc(656px - 0.5rem);
-  background-color: red;
   border-radius: 8px;
   padding: 0.25rem;
   display: flex;
