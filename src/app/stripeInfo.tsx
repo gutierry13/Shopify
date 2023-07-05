@@ -33,6 +33,7 @@ export async function StripePrefetch(productId: string) {
         name: product.name,
         imageUrl: product.images[0],
         description: product.description,
+        defaultPriceID: price.id,
         price: price.unit_amount
           ? new Intl.NumberFormat('pt-BR', {
               style: 'currency',
