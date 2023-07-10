@@ -14,7 +14,7 @@ interface ProductProps {
 export default async function Product({ params }: ProductProps) {
   const { props } = await StripePrefetch(params.id)
   const { product } = props
-  console.log(product.defaultPriceID)
+  // console.log(product.defaultPriceID)
 
   return (
     <ProductPage

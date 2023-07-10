@@ -1,8 +1,14 @@
 import { stripe } from '@/lib/stripe'
 import { NextResponse } from 'next/server'
 
-export async function GET() {
-  const priceID = 'price_1NLn5VJy2N6yeMWj6kPDalnr'
+export async function POST(request: Request) {
+  const res = await request.json()
+  const priceID = res.priceID
+  if (!priceID) {
+    return NextResponse.json({
+      status: 400,
+    })
+  }
   const successUrl = `${process.env.NEXT_URL}/success`
   const cancelUrl = `${process.env.NEXT_URL}/`
   const checkoutSession = await stripe.checkout.sessions.create({
